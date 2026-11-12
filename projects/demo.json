@@ -1,0 +1,16 @@
+{
+  "name": "demo",
+  "client": "Quillmesh (demo client)",
+  "brand": { "name": "Quillmesh", "domains": ["quillmesh.com"] },
+  "competitors": [
+    { "name": "Tandorra", "domains": ["tandorra.com"] },
+    { "name": "Supportlyx", "domains": ["supportlyx.com"] },
+    { "name": "Ticketgrove", "domains": ["ticketgrove.com"] }
+  ],
+  "locale": { "gl": "us", "hl": "en", "googleDomain": "google.com", "location": "United States", "device": "desktop" },
+  "depth": 50,
+  "provider": "demo",
+  "keywordsFile": "../examples/keywords.csv",
+  "alerts": { "dropPositions": 5, "priorityDrop": 3 },
+  "report": { "weeks": 12, "email": ["marketing@quillmesh.example"], "webhooks": [], "brandColor": "#2563eb", "agency": "Your Agency" }
+}

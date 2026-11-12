@@ -1,0 +1,36 @@
+{
+  "name": "google-serp-rank-tracker",
+  "version": "1.0.0",
+  "description": "Node.js CLI that tracks a brand's Google rankings for its keywords against competitors and builds weekly SEO reports with Chart.js charts, AI insights and alerts.",
+  "type": "module",
+  "bin": {
+    "serp-tracker": "bin/serp-tracker.js"
+  },
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node bin/serp-tracker.js",
+    "demo": "node bin/serp-tracker.js demo",
+    "test": "node --test --test-reporter=spec \"test/**/*.test.js\""
+  },
+  "engines": {
+    "node": ">=22.13"
+  },
+  "keywords": [
+    "seo",
+    "serp",
+    "rank-tracker",
+    "google",
+    "cheerio",
+    "chartjs",
+    "cli"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "chart.js": "^4.6.1",
+    "cheerio": "^1.2.0",
+    "commander": "^14.0.3"
+  },
+  "optionalDependencies": {
+    "puppeteer-core": "^24.43.1"
+  }
+}

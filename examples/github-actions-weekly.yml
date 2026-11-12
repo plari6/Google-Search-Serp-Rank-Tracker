@@ -1,0 +1,29 @@
+# Copy to .github/workflows/weekly-seo-report.yml in a private repo holding your projects/ folder.
+# Runs every Monday 06:00 UTC, keeps the SQLite history in the Actions cache, uploads the report.
+name: Weekly SEO report
+on:
+  schedule: [{ cron: '0 6 * * 1' }]
+  workflow_dispatch: {}
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 24 }
+      - run: npm ci --omit=optional
+      - uses: actions/cache@v4
+        with:
+          path: data/serp.sqlite
+          key: serp-db-${{ github.run_id }}
+          restore-keys: serp-db-
+      - run: node bin/serp-tracker.js run acme --quiet
+        env:
+          SERPER_API_KEY: ${{ secrets.SERPER_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          REPORT_EMAIL_FROM: ${{ secrets.REPORT_EMAIL_FROM }}
+          WEBHOOK_URLS: ${{ secrets.WEBHOOK_URLS }}
+      - uses: actions/upload-artifact@v4
+        with: { name: seo-report, path: output/acme }

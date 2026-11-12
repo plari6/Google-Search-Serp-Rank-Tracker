@@ -1,0 +1,22 @@
+{
+  "name": "acme",
+  "client": "Acme Plumbing",
+  "brand": { "name": "Acme Plumbing", "domains": ["acmeplumbing.com"] },
+  "competitors": [
+    { "name": "Rapid Rooter", "domains": ["rapidrooter.com"] },
+    { "name": "City Drains", "domains": ["citydrains.com", "citydrains.co"] }
+  ],
+  "locale": { "gl": "us", "hl": "en", "googleDomain": "google.com", "location": "Austin,Texas,United States", "device": "mobile" },
+  "depth": 30,
+  "provider": "serper",
+  "earlyStop": true,
+  "keywordsFile": "acme-keywords.csv",
+  "alerts": { "dropPositions": 5, "priorityDrop": 3, "maxPrevPosition": 30, "urlChange": true, "featureLoss": true, "competitorOvertake": true, "gains": true },
+  "report": {
+    "weeks": 12,
+    "email": ["owner@acmeplumbing.com", "am@your-agency.com"],
+    "webhooks": ["https://hooks.slack.com/services/T000/B000/XXXX"],
+    "brandColor": "#0f766e",
+    "agency": "Your Agency"
+  }
+}
